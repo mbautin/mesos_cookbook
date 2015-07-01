@@ -4,7 +4,7 @@ maintainer_email 'hwilkinson@mdsol.com'
 license 'Apache 2.0'
 description 'Installs/Configures Apache Mesos'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '1.0.6'
+version '2.0.1001'
 
 %w( ubuntu centos amazon scientific ).each do |os|
   supports os
@@ -14,6 +14,8 @@ end
 %w( java apt docker ).each do |cb|
   depends cb
 end
+
+depends 'docker', '= 0.37.0'
 
 depends 'yum', '~> 3.0'
 
